@@ -236,15 +236,60 @@ function stats() {
 
 function reset_stats() {
   if (confirm("Are you sure you want to clear all stats?")) {
-    localStorage.setItem("revenue", 0)
-    localStorage.setItem("sold", 0)
+    // Reset global statistics
+    localStorage.setItem("revenue", 0);
+    localStorage.setItem("sold", 0);
+
+    // Reset statistics for each product
+    const cards = loadCards(); // Load existing cards from localStorage
+    Object.keys(cards).forEach(productName => {
+      cards[productName].sales = 0; // Reset sales to 0
+      cards[productName].revenue = 0; // Reset revenue to 0
+    });
+
+    // Save the updated cards back to localStorage
+    saveCards(cards);
+
+    // Update the UI
+    reload();
     stats();
   }
 }
+
 function reset_cart() {
   localStorage.setItem("cart", 0)
   stats();
 }
+
+function reset_full() {
+  if (confirm("Are you sure you want to clear ALL APP DATA (Factory Reset)?")) {
+    localStorage.clear();
+    localStorage.setItem("cart", 0)
+    localStorage.setItem("sold", 0)
+    localStorage.setItem("revenue", 0)
+    reload();
+    stats();
+  }
+}
+
+function reset_all_cards() {
+  if (confirm("Are you sure you want to clear ALL CARD STOCK AND STATISTICS?")) {
+    const cards = loadCards(); // Load existing cards from localStorage
+    Object.keys(cards).forEach(productName => {
+      cards[productName].sales = 0; // Reset sales to 0
+      cards[productName].revenue = 0; // Reset revenue to 0
+      cards[productName].stock = 0; // Reset stock to 0
+    });
+
+    // Save the updated cards back to localStorage
+    saveCards(cards);
+
+    // Update the UI
+    stats();
+    reload();
+  }
+}
+
 
 // Initialize the UI on page load
 reload();
