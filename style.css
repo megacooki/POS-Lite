@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    width: 100%; /* Removed 100vw to avoid scrollbar issues */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Example: 2 parts left, 1 part right */
+}
+
+.left {
+    height: min-content;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1pc;
+    padding: 1pc;
+}
+
+.right {
+    height: 100%; /* Added height to align with `.left` if required */
+    right: 0;
+    height: 100%;
+    padding: 2pc;
+    color: #313c40;
+    background-color: #e6eced;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.card {
+    border-radius: 1pc;
+    width: 100%;       /* Fixed width of 200px */
+    height: 200px;      /* Fixed height of 200px */
+    background-color: #f0f4f5;
+    color: #313c40;
+}
+
+.card img {
+    border-radius: 1pc 1pc 0 0 ;
+    width: 100%;
+    display: block;
+    object-fit: cover; /* Maintain aspect ratio of images */
+}
+.bottom {
+width: 100%;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+font-size: 1.5rem;
+}
+.bottom p {
+    padding: 1pc;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+.amount {
+    padding: 1pc;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+.product {
+    padding: 1pc;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.sold {
+    padding: 0.2pc 1pc;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.revenue {
+    padding: 0.2pc 1pc;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.right input {
+    width: 100%;
+    padding: 0.5pc;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 0;
+    background-color: #e6eced;
+    outline: none;
+}
+.right button {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+}
+.right h2 {
+    font-weight: 700;
+}
+.r-card {
+    background-color: #ffffff;
+    padding: 2pc;
+    border-radius: 1pc;
+}
+.right p, label {
+    font-weight: 500;
+}
+.red {
+    background-color: #f05451;
+}
+.green {
+    background-color: #56bf8c;
+}
+.neutral {
+    background-color: #313c40;
+}
